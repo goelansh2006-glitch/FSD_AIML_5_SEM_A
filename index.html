@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>synchronous demo</title>
-    <script src="./promise.js"></script>
+    <script>
+        async function loadProductDetails(){
+            try{
+                const url=`https://dummyjson.com/products`;
+                const res=await fetch(url);
+                const data=await res.json();
+                document.getElementById("para1").innerHTML=data.products[0].title;
+                document.getElementById("para1").style.color="red";
+                console.log("Response:",data)
+            }
+            catch(err){
+                console.log("Error:", err)
+            }
+        }
+        loadProductDetails();
+    </script>
 </head>
 <body>
-    
+    <h1>GITHUB PAGE INFORMTION </h1>
+    <p id="para1"></p>
 </body>
 </html>
