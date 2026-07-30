@@ -1,6 +1,7 @@
 const num=[1,2,3,4,5];
-const b=num[0];
-const c=num[1];
+
+//const b=num[0];
+//const c=num[1];
 
 //array destructuring
 const [a,b] = num;
