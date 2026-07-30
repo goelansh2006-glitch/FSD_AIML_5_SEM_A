@@ -1,3 +1,4 @@
+//using rest and spread operator
 const student={
     id: 101,
     name: "Ansh",
