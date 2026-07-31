@@ -1,7 +1,17 @@
 //import and export module
-const sum =(...num)=>{
+export const sum =(...num)=>{
     const s=num.reduce((s,i)=>(s+i));
     return s;
 }
 
-export default sum;
+export const add=(...num)=>{
+    let s = 0;
+    for(let i of num){
+        s+=i;
+    }
+    return s;
+}
+
+// export default sum;
+//named export 
+//export {sum,add};
