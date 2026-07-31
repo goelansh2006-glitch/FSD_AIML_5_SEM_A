@@ -9,6 +9,7 @@
             margin: auto;
             width: 80%;
             padding: 10px;
+            font-size: 20px;
             background-color: antiquewhite;
             color: brown;
             border: 2px solid blue;
@@ -19,14 +20,14 @@
     <table>
         <thead>
             <tr>
-                <th> S.no </th>
-                <th> title </th>
-                <th> Image </th>
-                <th> QR code </th>
-                <th> Category </th>
-                <th> Price </th>
-                <th> Rating </th>
-                <th> Stock </th>
+                <th> S.NO </th>
+                <th> TITLE </th>
+                <th> IMAGE </th>
+                <th> QR CODE </th>
+                <th> CATEGORY </th>
+                <th> PRICE </th>
+                <th> RATING </th>
+                <th> STOCK </th>
             </tr>
         </thead>
         <tbody id="data">
@@ -48,7 +49,7 @@
                     <td> ${index+1}</td>
                     <td> ${i.title}</td>
                     <td> <img src=${i.images[0]} height="150px" width="150px"></td>
-                    <td> <img src=${i.meta.qrCode}></td>
+                    <td> <img src=${i.meta.qrCode} height="150px" width="150px"></td>
                     <td> ${i.category}</td>
                     <td> ₹${i.price}</td>
                     <td> ${i.rating}</td>
