@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            width: 400px;
+            background: rgb(141, 203, 226);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(148, 95, 95, 0.2);
+        }
+
+        .card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #333;
+        }
+
+        .card h1 {
+            margin: 15px 0 5px;
+            color: #222;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .details {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .details div {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .details strong {
+            color: #333;
+        }
+
+        .profile-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .profile-btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" id="profile">
+        Loading...
+    </div>
+
+    <script>
+
+        const URL = "https://api.github.com/users/goelansh2006-glitch";
+
+        async function loadUser() {
+
+            try {
+
+                const res = await fetch(URL);
+
+                if (!res.ok) {
+                    throw new Error("User not found");
+                }
+
+                const data = await res.json();
+
+                console.log(data);
+
+                document.getElementById("profile").innerHTML = `
+
+                    <img src="${data.avatar_url}" alt="Profile">
+
+                    <h1>${data.login}</h1>
+
+                    <p>GitHub User</p>
+
+                    <div class="details">
+
+                        <div>
+                            <strong>ID:</strong>
+                            ${data.id}
+                        </div>
+
+                        <div>
+                            <strong>Node ID:</strong>
+                            ${data.node_id}
+                        </div>
+
+                        <div>
+                            <strong>Public Repositories:</strong>
+                            ${data.public_repos}
+                        </div>
+
+                        <div>
+                            <strong>Created At:</strong>
+                            ${data.created_at}
+                        </div>
+
+                        <div>
+                            <strong>Updated At:</strong>
+                            ${data.updated_at}
+                        </div>
+
+                    </div>
+
+                    <a class="profile-btn"
+                       href="${data.html_url}"
+                       target="_blank">
+                        View GitHub Profile
+                    </a>
+                `;
+
+            }
+
+            catch (err) {
+
+                console.log("ERROR:", err);
+
+                document.getElementById("profile").innerHTML = `
+                    <h2>Error</h2>
+                    <p>Unable to load GitHub profile.</p>
+                `;
+            }
+        }
+
+        loadUser();
+
+    </script>
+
+</body>
+</html>
