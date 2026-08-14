@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App using CDN</title>
+    <style>
+       #root {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.booklist {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 5px solid aquamarine;
+    padding: 15px;
+    text-align: center;
+    width: 220px;
+}
+    </style>
+</head>
+<body>
+    <h1><center>BOOK STORE</center></h1>
+    <div id="root">
+
+    </div>
+</body>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="./index.js"></script>
+</html>
