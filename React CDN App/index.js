@@ -12,7 +12,8 @@ function Book(props){
             width:"105px",
             height:"155px"});
     const h2=React.createElement("h2",{style: {color:"red"}},"Price: ₹"+props.price);
-    const child=React.createElement("div",{className:"card"},[image,h2]);
+    const bt=React.createElement("button",{},"AddToCart");
+    const child=React.createElement("div",{className:"card"},[image,h2,bt]);
     return child;
 }
 const bookdata = data.map((i)=>{
