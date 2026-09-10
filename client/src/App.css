@@ -22,6 +22,10 @@
   justify-content: space-between;
   color:white;
 }
+.navbar a{
+  text-decoration: none;
+  color: white
+}
 .home{
   width:100vw;
   height:80vh;
