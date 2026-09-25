@@ -1,0 +1,20 @@
+.btn{
+    width: 150px;
+    height: 60px;
+    background-color: aquamarine;
+    color: brown;
+}
+
+.watch{
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
+    background-color: red;
+    color: yellow;
+    font-size: large;
+}
+
+.stopwatch{
+    display: flex;
+}
