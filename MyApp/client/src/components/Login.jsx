@@ -4,40 +4,44 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const [uname,setUname] = useState("");
     const [pass,setPass] = useState("");
+    const [message,setMessage] = useState("");
     const navigate=useNavigate();
-    function handleSubmit(){
-        if(uname=="admin" && pass=="manager"){
+    function handleLogin(e){
+        e.preventDefault();
+        if(uname==="admin" && pass==="manager"){
             navigate("/admin")
         }
-        else if(uname=="user" && pass=="abes"){
-            navigate("/user")
+        else if(uname==="user" && pass==="abes"){
+            navigate("/user")    
         }
         else{
-             alert("Credentials are incorrect")
+            setMessage("Error: check credentials.")
+            navigate("/")
+        }
+
     }
-}
   return (
     <div>
-      <h1> LOGIN PAGE </h1>
-      <form onSubmit={handleSubmit}>
-        <label>Uname</label>
-        <input type="text"
-                name="uname"
-                placeholder="Enter User Name"
-                value={uname}
-                onChange={(e)=>setUname(e.target.value)}/>
-                <br/>
-                <label>Pass</label>
-        <input type="password"
-                name="pass"
-                placeholder="Enter Password"
-                value={pass}
-                onChange={(e)=>setPass(e.target.value)}/>
-                <br/>
-                <button type='submit'>Login</button>
-                <button type='reset'>Reset</button>
-                <br/>
-      </form>
+      <div className="Login">
+        <h1>SignIn</h1>
+        <h2 style={{color:"red"}}>{message}</h2>
+        <form onSubmit={handleLogin}>
+            UserName:
+            <input type="text"
+                    value={uname}
+                    placeholder="Enter the User Name"
+                    onChange={(e)=> setUname(e.target.value)}/>
+                    <br/>
+            Password:
+            <input type="password"
+                   value={pass}
+                   placeholder="Enter the Password"
+                   onChange={(e)=>setPass(e.target.value)}/>
+                   <br/>
+            <button> SignIn </button>
+            <button> Reset </button>       
+        </form>
+      </div>
     </div>
   )
 }
