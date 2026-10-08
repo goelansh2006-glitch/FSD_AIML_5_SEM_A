@@ -1,72 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+}
+
 .Login {
-  width: 400px;
+  width: 380px;
   margin: 100px auto;
   padding: 35px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .Login h1 {
   text-align: center;
-  margin-bottom: 30px;
   color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.Login h2 {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .Login form {
   display: flex;
   flex-direction: column;
-}
-
-.Login label {
-  font-weight: bold;
+  font-size: 15px;
+  color: #334155;
 }
 
 .Login input {
-  padding: 10px;
-  margin-top: 6px;
+  width: 100%;
+  padding: 11px;
+  margin-top: 7px;
   margin-bottom: 18px;
-  border: 1px solid #ccc;
+  border: 1px solid #cbd5e1;
   border-radius: 6px;
   font-size: 15px;
   outline: none;
+  box-sizing: border-box;
 }
 
 .Login input:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 4px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
 }
 
-.button-group {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.signin-btn,
-.reset-btn {
-  padding: 10px 25px;
+.Login button {
+  padding: 11px 22px;
+  margin-top: 5px;
+  margin-right: 10px;
   border: none;
   border-radius: 6px;
   font-size: 15px;
   cursor: pointer;
-}
-
-.signin-btn {
-  background: #2563eb;
   color: white;
 }
 
-.signin-btn:hover {
+.Login button:first-of-type {
+  background: #2563eb;
+}
+
+.Login button:first-of-type:hover {
   background: #1d4ed8;
 }
 
-.reset-btn {
+.Login button:last-of-type {
   background: #64748b;
-  color: white;
 }
 
-.reset-btn:hover {
+.Login button:last-of-type:hover {
   background: #475569;
 }
