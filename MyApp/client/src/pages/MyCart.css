@@ -1,0 +1,9 @@
+.page-content {
+  padding: 30px 50px;
+  background: #f5f5f5;
+  min-height: 70vh;
+}
+
+.page-content h2 {
+  color: #1e293b;
+}

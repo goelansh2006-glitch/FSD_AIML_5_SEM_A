@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import "./Login.css";
 
 const Login = () => {
     const [uname,setUname] = useState("");
@@ -18,7 +19,6 @@ const Login = () => {
             setMessage("Error: check credentials.")
             navigate("/")
         }
-
     }
   return (
     <div>

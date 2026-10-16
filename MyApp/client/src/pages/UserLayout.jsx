@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../components/UserContext";
 import "./UserLayout.css";
+import { Link } from "react-router-dom";
 
 const UserLayout = () => {
 
@@ -36,16 +37,23 @@ const UserLayout = () => {
       </div>
       <nav className="navbar">
         <div className="nav-links">
-          <a href="#">Home</a>
-          <a href="#">
-            My Cart ({cart.length})
-          </a>
-          <a href="#">
+
+          <Link to="/user">
+            Home
+          </Link>
+
+          <Link to="/user/cart">
+            My Cart
+          </Link>
+
+          <Link to="/user/orders">
             My Orders
-          </a>
+          </Link>
+
           <button onClick={handleLogout}>
             Logout
           </button>
+
         </div>
       </nav>
       <div className="products">
